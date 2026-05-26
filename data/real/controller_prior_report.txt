@@ -1,0 +1,83 @@
+=== PROJECT A: CONTROLLER PRIOR REPORT ===
+Generated: 2026-05-26T14:18:50
+
+════════════════════════════════════════
+GRAPH SCALE
+════════════════════════════════════════
+  Full graph neurons           : 134,013
+  Full graph edges (syn ≥ 5)   : 2,710,038
+  Total classified neurons     : 139,255
+    sensor                     : 93,880  (67.4%)
+    inter                      : 35,086  (25.2%)
+    motor                      : 10,289   (7.4%)
+  Sensorimotor subgraph        : 5,000 nodes  /  154,902 edges
+
+  In-degree  : median=9, mean=18.5, max=5,066
+  Out-degree : median=11, mean=18.5, max=6,398
+
+════════════════════════════════════════
+HIERARCHY & DIRECTION
+════════════════════════════════════════
+  GRC unweighted (n=5000)      : 0.0142   [0=flat  1=pure DAG]  ← correct
+  FF  weight fraction          : 10.86%
+  FB  weight fraction          : 6.37%
+  Lateral fraction             : 82.78%
+
+  Interpretation: Dominant lateral/recurrent structure (82.8%) with modest FF throughput.
+  GRC=0.014 ≈ flat confirms the network is NOT a simple feedforward pipeline.
+  This supports built-in temporal integration capacity — the connectivity itself acts as memory.
+
+════════════════════════════════════════
+COMMUNITY STRUCTURE
+════════════════════════════════════════
+  Total communities (SM subgraph) : 36
+  Communities with ≥50 neurons    : 12
+  Largest community               : 947 neurons  (Community 1)
+  Second largest                  : 902 neurons  (Community 4)
+  Smallest significant (≥50)      : 112 neurons
+
+  Top-5 community compositions:
+    Community  1 (n= 947): sensor=830  inter=60  motor=57
+    Community  4 (n= 902): sensor=898  inter=4  motor=0
+    Community 33 (n= 699): sensor=81  inter=510  motor=108
+    Community 11 (n= 653): sensor=199  inter=141  motor=313
+    Community 30 (n= 397): sensor=138  inter=58  motor=201
+
+════════════════════════════════════════
+BOTTLENECK HUBS (Betweenness Centrality)
+════════════════════════════════════════
+  Top-5 overall bottleneck neurons:
+    [sensor] ID 720575940614710509  bc=0.03023
+    [sensor] ID 720575940633077644  bc=0.01931
+    [sensor] ID 720575940635089945  bc=0.01917
+    [inter ] ID 720575940625102224  bc=0.01713
+    [inter ] ID 720575940635119723  bc=0.01680
+
+  Top-5 inter-neuron bottlenecks (key for sub-policy design):
+    ID 720575940625102224  bc=0.01713
+    ID 720575940635119723  bc=0.01680
+    ID 720575940613635737  bc=0.00911
+    ID 720575940629513478  bc=0.00740
+    ID 720575940637098352  bc=0.00724
+
+  Betweenness mean by type:
+    inter  : 0.000820
+    motor  : 0.000697
+    sensor : 0.000547
+
+════════════════════════════════════════
+CONTROLLER ARCHITECTURE SPECIFICATION → PROJECT B
+════════════════════════════════════════
+  Message-passing depth     : 2 hops  (sensor→inter→motor)
+  Hub embedding width       : 2× wider for top-quintile-degree inter nodes
+  Feedback edges            : implement as residual skip-connections
+  Lateral recurrent edges   : keep in adjacency (82.8% weight — built-in memory)
+  GNN output modules        : 6 heads  (mirrors 6 largest communities)
+  GRC-based rationale       : GRC=0.014 — nearly flat topology, not a pure DAG.
+                              A GNN with bidirectional edges captures this; MLP cannot.
+
+  Why GNN > MLP here:
+    FF=10.9%, FB=6.4%, Lateral=82.8% — the network has massive structured recurrence.
+    An MLP discards all topology and treats every neuron identically.
+    A connectome-shaped GNN preserves adjacency-specific message passing, hub-mediated
+    integration, and the implicit memory capacity embedded in lateral connections.

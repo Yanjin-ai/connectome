@@ -1,0 +1,4 @@
+GRC: 18.675650759355968
+Fallback used: False
+Nodes in subgraph: 4976
+Note: normalized=True, range 0-1

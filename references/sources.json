@@ -1,0 +1,88 @@
+{
+  "description": "Key references for FlyWire + embodied AI research and internship application. URLs verified May 2026.",
+  "sources": [
+    {
+      "id": "flywire_resource",
+      "title": "FlyWire: online community for whole-brain connectomics",
+      "authors": "Dorkenwald et al.",
+      "year": 2022,
+      "venue": "Nature Methods 19, 119–128",
+      "url": "https://www.nature.com/articles/s41592-021-01330-0",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/34949809/",
+      "notes": "Core FlyWire platform paper. Describes EM pipeline, browser-based 3D segmentation, collaborative proofreading, and mechanosensory circuit analysis. Foundation for understanding FlyWire data schema and annotation pipeline. Read first."
+    },
+    {
+      "id": "wiring_diagram_2024",
+      "title": "Neuronal wiring diagram of an adult brain",
+      "authors": "Dorkenwald et al. (FlyWire Consortium)",
+      "year": 2024,
+      "venue": "Nature (Oct 2, 2024 — 9-paper package)",
+      "url": "https://www.nature.com/articles/d41586-024-03029-6",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10327113/",
+      "notes": "Complete wiring diagram: 139,255 proofread neurons, >50M synaptic connections. Companion papers include Schlegel et al. (hierarchical cell-type annotation) and others. Use to identify sensorimotor subgraph for Project A."
+    },
+    {
+      "id": "network_statistics_2024",
+      "title": "Network statistics of the whole-brain connectome of Drosophila",
+      "authors": "Lin, Yang et al. (Murthy lab)",
+      "year": 2024,
+      "venue": "Nature 634, 153–165",
+      "url": "https://www.nature.com/articles/s41586-024-07968-y",
+      "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446825/",
+      "key_findings": "130,000+ neurons; rich-club organization; ~30% neurons are high-degree hubs; hierarchy and community structure quantified on v630 snapshot.",
+      "notes": "Primary methodological reference for Project A. Shows exactly the metrics (degree, betweenness, hierarchy, modularity) we replicate in the toy notebook."
+    },
+    {
+      "id": "flywire_network_analysis_zenodo",
+      "title": "flywire-network-analysis: analysis scripts + Zenodo data package",
+      "url": "https://zenodo.org/records/12572930",
+      "github": "https://github.com/murthylab/flywire-network-analysis",
+      "notes": "Public scripts and data snapshots accompanying Lin et al. 2024. Python graph-tool based (Linux/Mac). Migrate minimal_structural_analysis.ipynb logic to this dataset for real Project A analysis."
+    },
+    {
+      "id": "connectivity_data_zenodo",
+      "title": "FlyWire Whole-brain Connectome Connectivity Data",
+      "url": "https://zenodo.org/records/10676866",
+      "notes": "Public snapshot of FlyWire connectivity data. Direct replacement for toy_connectome CSV files in Project A notebook."
+    },
+    {
+      "id": "codex_github",
+      "title": "murthylab/codex: FlyWire Connectome Data Explorer",
+      "url": "https://github.com/murthylab/codex",
+      "data_portal": "https://codex.flywire.ai/api/download",
+      "notes": "Web app + Python library for querying FlyWire neurons, annotations, connectivity. Primary programmatic access portal. Use for subsetting sensorimotor neurons for Project A."
+    },
+    {
+      "id": "flygm_2026",
+      "title": "Whole-Brain Connectomic Graph Model Enables Whole-Body Locomotion Control in Fruit Fly",
+      "authors": "FlyGM team",
+      "year": 2026,
+      "venue": "arXiv:2602.17997",
+      "url": "https://arxiv.org/abs/2602.17997",
+      "key_findings": "Static connectome as directed message-passing graph with afferent/intrinsic/efferent node types. Integrated with biomechanical fruit fly simulator. Outperforms MLP, random-graph, and degree-preserving-rewired baselines on locomotion tasks. No task-specific architectural tuning needed.",
+      "notes": "Core inspiration for Project B. Shows that biological graph structure (not just statistics) provides meaningful inductive bias. Directly maps to sensor/inter/motor node type scheme in toy data."
+    },
+    {
+      "id": "flygnn_neurips2025",
+      "title": "Whole-Brain Connectomic Graph Neural Networks Enable Whole-Body Locomotion Control in Drosophila",
+      "year": 2025,
+      "venue": "NeurIPS 2025",
+      "url": "https://neurips.cc/virtual/2025/loc/san-diego/131402",
+      "openreview": "https://openreview.net/pdf/bc0b0bb58243ada08d3b04b48bd6eb4db4746251.pdf",
+      "notes": "Earlier NeurIPS version. flyGNN implements connectome as recurrent message-passing network. Demonstrates gait initiation, straight walking, turning. Read alongside FlyGM (2602.17997) to understand architecture evolution."
+    },
+    {
+      "id": "pni_summer_program",
+      "title": "Princeton Neuroscience Institute Summer Internship Program",
+      "url": "https://pni.princeton.edu/apply/undergraduate-summer-research-programs/application-process",
+      "pathways": "https://www.pathwaystoscience.org/programhub.aspx?sort=SUM-Princeton-NeuroIntern",
+      "notes": "9-week program June 1 – July 31. Students placed in PNI labs. Mala Murthy (FlyWire PI) is PNI professor. Apply via Leadership Alliance portal. Personal statement + research interests required. Selection criteria: coding ability, data analysis, capacity for independent progress."
+    },
+    {
+      "id": "flywire_homepage",
+      "title": "FlyWire: online proofreading and visualization platform",
+      "url": "https://flywire.ai/",
+      "notes": "Main FlyWire portal. Browse neurons and synapses interactively. Useful for building intuition before running batch analyses."
+    }
+  ]
+}

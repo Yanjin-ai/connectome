@@ -1,0 +1,51 @@
+=== proofread_connections_783.feather ===
+Shape: (16847997, 10)
+Columns: ['pre_pt_root_id', 'post_pt_root_id', 'neuropil', 'syn_count', 'gaba_avg', 'ach_avg', 'glut_avg', 'oct_avg', 'ser_avg', 'da_avg']
+Dtypes:
+pre_pt_root_id       int64
+post_pt_root_id      int64
+neuropil            object
+syn_count            int64
+gaba_avg           float64
+ach_avg            float64
+glut_avg           float64
+oct_avg            float64
+ser_avg            float64
+da_avg             float64
+dtype: object
+Sample (first 3 rows):
+       pre_pt_root_id     post_pt_root_id neuropil  syn_count  gaba_avg   ach_avg  glut_avg   oct_avg   ser_avg    da_avg
+0  720575940629970489  720575940631267655   AVLP_R          7  0.654330  0.023704  0.272418  0.048125  0.000472  0.000951
+1  720575940623828999  720575940612348950    SLP_R          4  0.386517  0.024020  0.580512  0.000817  0.000857  0.007278
+2  720575940624078484  720575940616950161    SMP_R          2  0.001719  0.979256  0.001811  0.000016  0.005870  0.011328
+Null counts: {'pre_pt_root_id': 0, 'post_pt_root_id': 0, 'neuropil': 0, 'syn_count': 0, 'gaba_avg': 1732, 'ach_avg': 1732, 'glut_avg': 1732, 'oct_avg': 1732, 'ser_avg': 1732, 'da_avg': 1732}
+
+ASSUMED COLUMNS: pre='pre_pt_root_id', post='post_pt_root_id', syn='syn_count'
+Syn count stats: min=1, median=1, mean=3.2, max=2405
+Pairs with syn>=5: 2,710,038  (16.1%)
+Pairs with syn>=3: 5,137,409  (30.5%)
+Unique pre-neurons:  138,005
+Unique post-neurons: 137,090
+
+=== per_neuron_neuropil_count_pre_783.feather ===
+Shape: (2781037, 3)
+Columns (first 5): ['pre_pt_root_id', 'neuropil', 'count']
+All columns: ['pre_pt_root_id', 'neuropil', 'count']
+Dtypes (first 5): {'pre_pt_root_id': dtype('int64'), 'neuropil': dtype('O'), 'count': dtype('int64')}
+Sample:
+       pre_pt_root_id neuropil  count
+0  720575940379281722     ME_L      1
+1  720575940379283482     ME_L      1
+
+=== per_neuron_neuropil_count_post_783.feather ===
+Shape: (43439994, 3)
+All columns: ['post_pt_root_id', 'neuropil', 'count']
+Sample:
+      post_pt_root_id neuropil  count
+0  720575940379279642     ME_L      1
+1  720575940379279674     ME_L      2
+
+=== proofread_root_ids_783.npy ===
+Shape: (139255,),  dtype: uint64
+Sample IDs: [720575940621014292 720575940621939071 720575940624201033
+ 720575940608193884 720575940621618859]

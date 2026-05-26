@@ -1,0 +1,42 @@
+# ─── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+._*
+.Spotlight-V100
+.Trashes
+
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+env/
+
+# ─── Jupyter ──────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ─── Large raw FlyWire data (download via scripts/download_data.py) ────────────
+# Source: https://zenodo.org/records/10676866
+data/real/*.feather
+data/real/*.feather.partial.bad
+data/real/edges_filtered.csv
+data/real/proofread_root_ids_783.npy
+
+# ─── Matplotlib / TensorBoard caches ─────────────────────────────────────────
+.mplconfig/
+logs/.mplconfig/
+logs/mplconfig/
+logs/tb/
+
+# ─── Claude Code session data ─────────────────────────────────────────────────
+.claude/
+
+# ─── Misc ─────────────────────────────────────────────────────────────────────
+*.partial.bad
+"README (1).md"

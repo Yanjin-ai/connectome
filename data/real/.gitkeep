@@ -1,0 +1,12 @@
+# Large raw FlyWire files are excluded from git (too large for GitHub).
+# Download them with:
+#
+#   python scripts/download_data.py
+#
+# Source: https://zenodo.org/records/10676866 (FlyWire v783, Dorkenwald et al. 2024)
+#
+# Files downloaded (~1.1 GB total):
+#   proofread_connections_783.feather       852 MB  — 16.8M synaptic connections
+#   per_neuron_neuropil_count_post_783.feather
+#   per_neuron_neuropil_count_pre_783.feather
+#   proofread_root_ids_783.npy
