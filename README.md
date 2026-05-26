@@ -194,4 +194,4 @@ Full reference list with verified URLs: [`references/sources.json`](references/s
 
 ---
 
-*This project was developed as part of an application to the Princeton Neuroscience Institute Summer Internship Program (FlyWire / Murthy lab, computational connectomics). The long-term direction is using whole-brain connectomics as a structural prior for embodied AI agents.*
+*Part of an ongoing research direction: using whole-brain connectomics as a structural prior for embodied AI agents. The long-term goal is understanding how biological wiring encodes computation — and whether those principles can transfer to artificial controllers that learn to act in the world.*
